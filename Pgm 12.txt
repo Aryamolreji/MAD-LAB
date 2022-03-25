@@ -1,0 +1,111 @@
+####MainActivity.java
+
+
+package com.example.lab_cycle_3;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+public class MainActivity extends AppCompatActivity {
+String[] Mobiles={"Apple","Samsung","Xiomi","MI","OnePlus"};
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+ListView ls=(ListView) findViewById(R.id.list);
+TextView t1=
+(TextView) findViewById(R.id.textView);
+ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,
+R.layout.list_items,R.id.textView, Mobiles);
+ls.setAdapter(adapter);
+ls.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+@Override
+public void onItemClick(AdapterView<?> parent, View view, int
+60
+position, long id) {
+String value=adapter.getItem(position);
+Toast.makeText(getApplicationContext(),value,Toast.LENGTH_LONG).show();
+}
+});
+ls.setOnItemLongClickListener(new
+AdapterView.OnItemLongClickListener()
+{
+@Override
+public boolean onItemLongClick(AdapterView<?> parent, View view,
+int position, long id) {
+if (position==0)
+{
+Toast.makeText(getBaseContext(),"This is
+Apple",Toast.LENGTH_LONG).show();
+}
+if (position==1)
+{
+Toast.makeText(getBaseContext(),"This is
+Samsung",Toast.LENGTH_LONG).show();
+}
+if (position==2)
+{
+Toast.makeText(getBaseContext(),"This is
+Xiomi",Toast.LENGTH_LONG).show();
+}
+if (position==3)
+{
+Toast.makeText(getBaseContext(),"This is
+MI",Toast.LENGTH_LONG).show();
+}
+if (position==4)
+{
+Toast.makeText(getBaseContext(),"This is
+1+",Toast.LENGTH_LONG).show();
+}
+return true;
+}
+});
+}
+}
+
+
+
+###activity_main.xml
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<ListView
+android:id="@+id/list"
+android:layout_width="419dp"
+android:layout_height="731dp"
+61
+tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+list_items.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<TextView
+android:id="@+id/textView"
+android:layout_width="413dp"
+android:layout_height="80dp"
+android:text="hf"
+tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

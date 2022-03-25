@@ -1,0 +1,86 @@
+#####activity_main.xml
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hello World!"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+####MainActivity.java
+
+
+
+package com.example.alarm_clock;
+import androidx.appcompat.app.AppCompatActivity;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.os.Bundle;
+import android.widget.TextClock;
+import android.widget.TimePicker;
+import java.util.Timer;
+import java.util.TimerTask;
+public class MainActivity extends AppCompatActivity {
+TimePicker tp;
+TextClock tc;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+tp = findViewById(R.id.timepicker);
+tc = findViewById(R.id.textclock);
+Ringtone r=
+RingtoneManager.getRingtone(getApplicationContext(),RingtoneManager.getDefaul
+t
+Uri(RingtoneManager.TYPE_NOTIFICATION));
+Timer t = new Timer();
+t.scheduleAtFixedRate(new TimerTask() {
+@Override
+public void run() {
+if(tc.getText().toString().equals(AlarmTime())){
+r.play();
+}else{
+r.stop();
+}
+}
+},0,1000);
+}
+public String AlarmTime(){
+Integer alarmHours = tp.getCurrentHour();
+Integer alarmMinutes = tp.getCurrentMinute();
+String stringAlarmMinutes;
+if(alarmMinutes<10){
+stringAlarmMinutes="0";
+stringAlarmMinutes=stringAlarmMinutes.concat(alarmMinutes.toString());
+}else{
+stringAlarmMinutes=alarmMinutes.toString();
+}
+String stringAlarmTime;
+if(alarmHours>12){
+alarmHours=alarmHours-12;
+stringAlarmTime=alarmHours.toString().concat(":").concat(stringAlarmMinutes).
+c
+oncat("PM");
+}else {
+stringAlarmTime=alarmHours.toString().concat(":").concat(stringAlarmMinutes).
+c
+oncat("AM");
+}
+return stringAlarmTime;
+}
+}
