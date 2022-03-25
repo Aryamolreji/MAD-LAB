@@ -1,0 +1,162 @@
+############java
+
+package com.example.details;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
+
+
+
+######xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#FFC107"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="17dp"
+        android:fontFamily="cursive"
+        android:text="PERSONAL DETAILS"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textFontWeight="1000"
+        android:textSize="34sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="421dp"
+        android:fontFamily="sans-serif-black"
+        android:text="NAME:"
+        android:textColor="#0000FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="185dp"
+        android:layout_height="44dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="106dp"
+        android:layout_marginBottom="426dp"
+        android:fontFamily="sans-serif-black"
+        android:text="ARYAMOL REJI"
+        android:textColor="#0000FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="357dp"
+        android:fontFamily="sans-serif-black"
+        android:text="CLASS:"
+        android:textColor="#0000FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="182dp"
+        android:layout_height="49dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="357dp"
+        android:fontFamily="sans-serif-black"
+        android:text="S3MCA"
+        android:textColor="#0000FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="119dp"
+        android:layout_height="49dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="286dp"
+        android:fontFamily="sans-serif-black"
+        android:text="COLLEGE:"
+        android:textColor="#0000FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="231dp"
+        android:layout_height="46dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="127dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="289dp"
+        android:fontFamily="sans-serif-black"
+        android:text="RIT PAMPADY"
+        android:textColor="#0000FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="223dp"
+        android:fontFamily="sans-serif-black"
+        android:text="EMAIL ID:"
+        android:textColor="#0000FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="221dp"
+        android:clickable="true"
+        android:fontFamily="sans-serif-black"
+        android:text="aryamolreji29@gmail.com"
+        android:textColor="#0000FF"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
+
+

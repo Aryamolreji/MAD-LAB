@@ -1,0 +1,76 @@
+####MainActivity.java
+
+package com.example.stringtoast;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+    EditText string;
+    Button btn1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        string = (EditText) findViewById(R.id.string);
+        btn1= (Button) findViewById(R.id.btn1);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = string.getText().toString();
+                if(name.length()!=0) {
+// If name or password is not entered
+                    Toast.makeText(getApplicationContext(), "STRING ENTERED SUCCESSFULLY", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "STRING NOT ENTERED SUCCESSFULLY", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+###activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <EditText
+      android:id="@+id/string"
+      android:layout_width="350dp"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="150dp"
+      android:hint="ENTER YOUR NAME"
+      android:textColor="#9C27B0"
+      android:textSize="24sp" />
+
+  <Button
+      android:id="@+id/btn1"
+      android:layout_width="150dp"
+      android:layout_height="40dp"
+      android:layout_below="@+id/string"
+      android:layout_marginLeft="50dp"
+      android:layout_marginTop="30dp"
+      android:backgroundTint="#FF9800"
+      android:text="submit"
+      android:textSize="16sp" />
+</RelativeLayout>
+
